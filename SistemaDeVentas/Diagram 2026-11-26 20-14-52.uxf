@@ -1,0 +1,77 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>40</x><y>20</y><w>300</w><h>110</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
+/Application/
+--
+--
++/start(stage: Stage): void/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>180</y><w>300</w><h>110</h></coordinates><panel_attributes>SistemaDeVentas
+--
+--
++start(stage: Stage): void
++_main(args: String[]): void_</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>20</y><w>440</w><h>360</h></coordinates><panel_attributes>VistaController
+--
+-tblProductos: TableView&lt;Producto&gt;
+-colNombre: TableColumn&lt;Producto, String&gt;
+-colPrecio: TableColumn&lt;Producto, Double&gt;
+-colStock: TableColumn&lt;Producto, Integer&gt;
+-txtCantidad: TextField
+-lstCarrito: ListView&lt;ItemCarrito&gt;
+-lblTotal: Label
+-carrito: Carrito
+-archivoTicket: ArchivoTicket
+--
++initialize(): void
+-cargarProductos(): void
+-esCantidadValida(texto: String): boolean
+-handleAgregar(event: ActionEvent): void
+-handleConfirmar(event: ActionEvent): void
+-actualizarPantalla(): void
+-mostrarAlerta(tipo: Alert.AlertType, mensaje: String): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>500</y><w>300</w><h>90</h></coordinates><panel_attributes>ArchivoProductos
+--
+--
++cargar(): ArrayList&lt;Producto&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>960</x><y>200</y><w>280</w><h>90</h></coordinates><panel_attributes>ArchivoTicket
+--
+--
++guardar(carrito: Carrito): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>960</x><y>480</y><w>480</w><h>210</h></coordinates><panel_attributes>Carrito
+--
+-items: ArrayList&lt;ItemCarrito&gt;
+--
++Carrito()
++agregarProducto(producto: Producto, cantidad: int): void
+-buscarItem(producto: Producto): ItemCarrito
++calcularTotal(): double
++estaVacio(): boolean
++vaciar(): void
++getItems(): ArrayList&lt;ItemCarrito&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>960</x><y>780</y><w>480</w><h>250</h></coordinates><panel_attributes>ItemCarrito
+--
+-producto: Producto
+-cantidad: int
+--
++ItemCarrito(producto: Producto, cantidad: int)
++sumarCantidad(unidades: int): void
++getProducto(): Producto
++getNombre(): String
++getPrecio(): double
++getCantidad(): int
++getSubtotal(): double
++toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>720</y><w>440</w><h>270</h></coordinates><panel_attributes>Producto
+--
+-_serialVersionUID: long = 1L_
+-nombre: String
+-precio: Double
+-stock: int
+--
++Producto(nombre: String, precio: double, stock: int)
++validarDatos(): void
+-esTextoVacio(texto: String): boolean
++descontarStock(cantidad: int): void
++getNombre(): String
++getPrecio(): double
++getStock(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>800</y><w>300</w><h>50</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Serializable</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>1140</y><w>300</w><h>30</h></coordinates><panel_attributes>Exception</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>1140</y><w>440</w><h>90</h></coordinates><panel_attributes>OperacionInvalidaException
+--
+--
++OperacionInvalidaException(mensaje: String)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>120</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>820</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>1150</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>340</y><w>200</w><h>160</h></coordinates><panel_attributes>lt=-&gt;
+m2=1</panel_attributes><additional_attributes>10;10;170;10;170;140</additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>230</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=-&gt;
+m2=1</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>340</y><w>260</w><h>180</h></coordinates><panel_attributes>lt=.&gt;</panel_attributes><additional_attributes>240;10;10;10;10;160</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>370</y><w>30</w><h>370</h></coordinates><panel_attributes>lt=.&gt;</panel_attributes><additional_attributes>10;10;10;350</additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>580</y><w>340</w><h>180</h></coordinates><panel_attributes>lt=.&gt;</panel_attributes><additional_attributes>10;10;10;160;320;160</additional_attributes></element><element><id>Relation</id><coordinates><x>1160</x><y>280</y><w>30</w><h>220</h></coordinates><panel_attributes>lt=.&gt;</panel_attributes><additional_attributes>10;10;10;200</additional_attributes></element><element><id>Relation</id><coordinates><x>1190</x><y>680</y><w>50</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>870</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=-&gt;
+m2=1</panel_attributes><additional_attributes>110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1230</x><y>230</y><w>290</w><h>670</h></coordinates><panel_attributes>lt=.&gt;</panel_attributes><additional_attributes>10;10;270;10;270;650;210;650</additional_attributes></element></diagram>

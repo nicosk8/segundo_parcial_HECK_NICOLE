@@ -1,0 +1,6 @@
+TICKET DE COMPRA
+Parlantes Genius | Cantidad: 12 | Precio unitario: $ 25000.9 | Subtotal: $ 300010.80000000005
+Mouse Logitech | Cantidad: 15 | Precio unitario: $ 15000.0 | Subtotal: $ 225000.0
+Memoria RAM 16GB | Cantidad: 20 | Precio unitario: $ 40000.8 | Subtotal: $ 800016.0
+Auriculares Sony | Cantidad: 19 | Precio unitario: $ 35000.3 | Subtotal: $ 665005.7000000001
+TOTAL: $ 1990032.5
